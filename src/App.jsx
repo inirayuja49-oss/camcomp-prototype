@@ -442,7 +442,7 @@ const CompositionCameraApp = () => {
   // Camera Screen
   if (screen === "camera") {
     return (
-      <div className="h-screen bg-black flex flex-col relative overflow-hidden">
+      <div className="h-[100dvh] bg-black flex flex-col relative overflow-hidden">
         {/* Camera View */}
         <div className="flex-1 relative bg-black">
           {/* Video Stream */}
@@ -669,7 +669,7 @@ const CompositionCameraApp = () => {
   // Edit Screen
   if (screen === "edit") {
     return (
-      <div className="h-screen bg-black flex flex-col">
+      <div className="h-[100dvh] bg-black flex flex-col">
         {/* Header */}
         <div className="bg-gray-900 p-4 flex justify-between items-center">
           <button onClick={() => setScreen("camera")} className="text-white">
@@ -768,7 +768,7 @@ const CompositionCameraApp = () => {
   // Marketplace Screen
   if (screen === "marketplace") {
     return (
-      <div className="h-screen bg-gray-950 flex flex-col">
+      <div className="h-[100dvh] bg-gray-950 flex flex-col">
         <div className="bg-gray-900 p-4 flex justify-between items-center border-b border-gray-800">
           <button
             onClick={() => {
@@ -833,7 +833,7 @@ const CompositionCameraApp = () => {
   // Custom Editor Screen
   if (screen === "custom-editor") {
     return (
-      <div className="h-screen bg-black flex flex-col">
+      <div className="h-[100dvh] bg-black flex flex-col">
         <div className="bg-gray-900 p-4 flex justify-between items-center">
           <button
             onClick={() => {
@@ -932,7 +932,7 @@ const CompositionCameraApp = () => {
   // Forum Screen
   if (screen === "forum") {
     return (
-      <div className="h-screen bg-gray-950 flex flex-col">
+      <div className="h-[100dvh] bg-gray-950 flex flex-col">
         {/* Header */}
         <div className="bg-gray-900 p-4 flex justify-between items-center border-b border-gray-800">
           <button onClick={() => setScreen("camera")} className="text-white">
