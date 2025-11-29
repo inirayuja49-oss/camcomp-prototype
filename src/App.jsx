@@ -144,6 +144,20 @@ const CompositionCameraApp = () => {
     return () => stopCamera();
   }, [screen, facingMode]);
 
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.width = "100%";
+    document.body.style.height = "100%";
+
+    return () => {
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.width = "";
+      document.body.style.height = "";
+    };
+  }, []);
+
   const startCamera = async () => {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({
@@ -442,7 +456,7 @@ const CompositionCameraApp = () => {
   // Camera Screen
   if (screen === "camera") {
     return (
-      <div className="h-[100dvh] bg-black flex flex-col relative overflow-hidden">
+      <div className="fixed inset-0 bg-black flex flex-col relative overflow-hidden">
         {/* Camera View */}
         <div className="flex-1 relative bg-black">
           {/* Video Stream */}
@@ -669,7 +683,7 @@ const CompositionCameraApp = () => {
   // Edit Screen
   if (screen === "edit") {
     return (
-      <div className="h-[100dvh] bg-black flex flex-col">
+      <div className="fixed inset-0 bg-black flex flex-col">
         {/* Header */}
         <div className="bg-gray-900 p-4 flex justify-between items-center">
           <button onClick={() => setScreen("camera")} className="text-white">
@@ -768,7 +782,7 @@ const CompositionCameraApp = () => {
   // Marketplace Screen
   if (screen === "marketplace") {
     return (
-      <div className="h-[100dvh] bg-gray-950 flex flex-col">
+      <div className="fixed inset-0 bg-gray-950 flex flex-col">
         <div className="bg-gray-900 p-4 flex justify-between items-center border-b border-gray-800">
           <button
             onClick={() => {
@@ -833,7 +847,7 @@ const CompositionCameraApp = () => {
   // Custom Editor Screen
   if (screen === "custom-editor") {
     return (
-      <div className="h-[100dvh] bg-black flex flex-col">
+      <div className="fixed inset-0 bg-black flex flex-col">
         <div className="bg-gray-900 p-4 flex justify-between items-center">
           <button
             onClick={() => {
@@ -932,7 +946,7 @@ const CompositionCameraApp = () => {
   // Forum Screen
   if (screen === "forum") {
     return (
-      <div className="h-[100dvh] bg-gray-950 flex flex-col">
+      <div className="fixed inset-0 bg-gray-950 flex flex-col">
         {/* Header */}
         <div className="bg-gray-900 p-4 flex justify-between items-center border-b border-gray-800">
           <button onClick={() => setScreen("camera")} className="text-white">
