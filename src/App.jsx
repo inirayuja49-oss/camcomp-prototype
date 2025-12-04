@@ -110,120 +110,35 @@ const CompositionCameraApp = () => {
     {
       id: 1,
       name: "Rule of Thirds",
+      icon: Grid3x3,
       premium: false,
-      draw: (width, height) => {
-        return [
-          // Vertical lines (1/3, 2/3)
-          { x1: width / 3, y1: 0, x2: width / 3, y2: height },
-          { x1: (width / 3) * 2, y1: 0, x2: (width / 3) * 2, y2: height },
-
-          // Horizontal lines
-          { x1: 0, y1: height / 3, x2: width, y2: height / 3 },
-          { x1: 0, y1: (height / 3) * 2, x2: width, y2: (height / 3) * 2 },
-        ];
-      },
+      active: true,
     },
-
     {
       id: 2,
       name: "Golden Ratio",
+      icon: Sparkles,
       premium: true,
-      draw: (width, height) => {
-        const ratio = 1 / 1.618;
-        return [
-          // Golden vertical line
-          { x1: width * ratio, y1: 0, x2: width * ratio, y2: height },
-          // Golden horizontal line
-          { x1: 0, y1: height * ratio, x2: width, y2: height * ratio },
-        ];
-      },
+      active: true,
     },
-
-    {
-      id: 3,
-      name: "Center Grid",
-      premium: false,
-      draw: (width, height) => {
-        return [
-          { x1: width / 2, y1: 0, x2: width / 2, y2: height },
-          { x1: 0, y1: height / 2, x2: width, y2: height / 2 },
-        ];
-      },
-    },
-
+    { id: 3, name: "Center Grid", icon: Plus, premium: false, active: true },
     {
       id: 4,
       name: "Diagonal Lines",
+      icon: Sliders,
       premium: true,
-      draw: (width, height) => {
-        return [
-          { x1: 0, y1: 0, x2: width, y2: height },
-          { x1: width, y1: 0, x2: 0, y2: height },
-        ];
-      },
+      active: true,
     },
-
-    {
-      id: 5,
-      name: "Triangle",
-      premium: true,
-      draw: (width, height) => {
-        return [
-          { x1: width / 2, y1: 0, x2: 0, y2: height },
-          { x1: width / 2, y1: 0, x2: width, y2: height },
-          { x1: 0, y1: height, x2: width, y2: height },
-        ];
-      },
-    },
-
+    { id: 5, name: "Triangle", icon: Sparkles, premium: true, active: true },
     {
       id: 6,
       name: "Golden Triangle",
+      icon: Sparkles,
       premium: true,
-      draw: (width, height) => {
-        return [
-          // Main diagonal
-          { x1: 0, y1: height, x2: width, y2: 0 },
-
-          // Sub triangle
-          { x1: width * 0.618, y1: 0, x2: width, y2: height * 0.618 },
-        ];
-      },
+      active: true,
     },
-
-    {
-      id: 7,
-      name: "Symmetry",
-      premium: false,
-      draw: (width, height) => [
-        { x1: width / 2, y1: 0, x2: width / 2, y2: height },
-      ],
-    },
-
-    {
-      id: 8,
-      name: "Frame Lines",
-      premium: false,
-      draw: (width, height) => {
-        const padding = width * 0.07;
-        return [
-          { x1: padding, y1: padding, x2: width - padding, y2: padding },
-          {
-            x1: padding,
-            y1: height - padding,
-            x2: width - padding,
-            y2: height - padding,
-          },
-          { x1: padding, y1: padding, x2: padding, y2: height - padding },
-          {
-            x1: width - padding,
-            y1: padding,
-            x2: width - padding,
-            y2: height - padding,
-          },
-        ];
-      },
-    },
+    { id: 7, name: "Symmetry", icon: Grid3x3, premium: false, active: true },
+    { id: 8, name: "Frame Lines", icon: Crop, premium: false, active: true },
   ];
 
   const [userCompositions, setUserCompositions] = useState(compositions);
