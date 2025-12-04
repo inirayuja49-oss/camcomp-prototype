@@ -127,18 +127,9 @@ const CompositionCameraApp = () => {
       name: "Diagonal Lines",
       icon: Sliders,
       premium: true,
-      active: true,
+      active: false,
     },
-    { id: 5, name: "Triangle", icon: Sparkles, premium: true, active: true },
-    {
-      id: 6,
-      name: "Golden Triangle",
-      icon: Sparkles,
-      premium: true,
-      active: true,
-    },
-    { id: 7, name: "Symmetry", icon: Grid3x3, premium: false, active: true },
-    { id: 8, name: "Frame Lines", icon: Crop, premium: false, active: true },
+    { id: 5, name: "Triangle", icon: Sparkles, premium: true, active: false },
   ];
 
   const [userCompositions, setUserCompositions] = useState(compositions);
